@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
 
-	executionplane --silent docker volume create swarm_logs_api_rest_elasticsearch_rest_elasticsearch_data_volume
+	executionplane --silent docker volume create swarm_logs_boot/shutdown,rest_elasticsearch,rest_elasticsearch,rest_elasticsearch
 	
-executionplane --silent docker run -v swarm_logs_api_rest_elasticsearch_rest_elasticsearch_data_volume:/conteco/pwd ${CONTECO_REGISTRY}$1 --interactive cp -r /soleco/api/_component/_volumes/rest_elasticsearch_rest_elasticsearch_data_volume/* /conteco/pwd
+	executionplane --silent docker volume create swarm_logs_start/stop,rest_elasticsearch,rest_elasticsearch,rest_elasticsearch
+	
+executionplane --silent docker run -v swarm_logs_boot/shutdown,rest_elasticsearch,rest_elasticsearch,rest_elasticsearch:boot/shutdown,rest_elasticsearch,rest_elasticsearch,rest_elasticsearch ${CONTECO_REGISTRY}$1 --interactive tar -C / -xvf /soleco/api/_component/_volumes/boot/shutdown,rest_elasticsearch,rest_elasticsearch,rest_elasticsearch.tar
+		
+executionplane --silent docker run -v swarm_logs_start/stop,rest_elasticsearch,rest_elasticsearch,rest_elasticsearch:start/stop,rest_elasticsearch,rest_elasticsearch,rest_elasticsearch ${CONTECO_REGISTRY}$1 --interactive tar -C / -xvf /soleco/api/_component/_volumes/start/stop,rest_elasticsearch,rest_elasticsearch,rest_elasticsearch.tar
 		

@@ -153,8 +153,20 @@ executionplane --silent docker container prune --force
 continue="true"
 while [[ "true" == "$continue" ]] ;
 do
-	executionplane docker volume rm "swarm_logs_api_rest_elasticsearch_rest_elasticsearch_data_volume"
-	result=$(docker volume ls | grep "swarm_logs_api_rest_elasticsearch_rest_elasticsearch_data_volume")
+	executionplane docker volume rm "swarm_logs_boot/shutdown,rest_elasticsearch,rest_elasticsearch,rest_elasticsearch"
+	result=$(docker volume ls | grep "swarm_logs_boot/shutdown,rest_elasticsearch,rest_elasticsearch,rest_elasticsearch")
+	if [[ "$result" == "" ]] ; then
+		continue="false"
+	else
+		sleep 3;
+	fi
+done;
+	
+continue="true"
+while [[ "true" == "$continue" ]] ;
+do
+	executionplane docker volume rm "swarm_logs_start/stop,rest_elasticsearch,rest_elasticsearch,rest_elasticsearch"
+	result=$(docker volume ls | grep "swarm_logs_start/stop,rest_elasticsearch,rest_elasticsearch,rest_elasticsearch")
 	if [[ "$result" == "" ]] ; then
 		continue="false"
 	else

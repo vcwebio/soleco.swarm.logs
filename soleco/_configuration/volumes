@@ -1,9 +1,12 @@
-boot/shutdown,ekg,ekg,ekg
-start/stop,ekg,ekg,ekg_rest_elasticsearch
-start/stop,ekg,ekg,ekg_ui_kibana
-start/stop,ingest_file,ingest_container_logs,ingest_container_logs
-boot/shutdown,kz,kz,kz
-start/stop,metrics_monitor,metrics_monitor,metrics_monitor
-boot/shutdown,streamsets,processor,processor
-start/stop,streamsets,processor,processor_ui_streamsets
+ekg_elasticsearch_volume
+ekg_grafana_volume
+ingest_container_logs_filebeat_volume
+kz_kafka_secrets_volume
+kz_kafka_data_volume
+kz_zookeeper_secrets_volume
+kz_zookeeper_data_volume
+kz_zookeeper_log_volume
+metrics_monitor_heartbeat_data_volume
+metrics_monitor_heartbeat_monitors_volume
+processor_streamsets_volume
 
